@@ -1,5 +1,6 @@
 from flask import Flask
 from flask_restful import Api
+from sql_alchemy import banco
 
 
 from src.controllers.listHoteisController import ListHoteis

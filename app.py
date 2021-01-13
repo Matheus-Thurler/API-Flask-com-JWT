@@ -1,17 +1,11 @@
 from flask import Flask
-from flask_restful import Resource, Api
+from flask_restful import  Api
 
-from hoteisList import hoteis
+from resources.hotel import Hoteis
 
 
 app = Flask(__name__)
 api = Api(app)
-
-
-
-class Hoteis(Resource):
-    def get(self):
-        return {'hoteis': hoteis}
 
 
 api.add_resource(Hoteis, '/hoteis')

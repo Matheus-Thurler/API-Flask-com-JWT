@@ -1,13 +1,17 @@
 from flask import Flask
 from flask_restful import Resource, Api
 
+from hoteisList import hoteis
+
+
 app = Flask(__name__)
 api = Api(app)
 
 
+
 class Hoteis(Resource):
     def get(self):
-        return {'hoteis': "meus hoteis"}
+        return {'hoteis': hoteis}
 
 
 api.add_resource(Hoteis, '/hoteis')

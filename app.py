@@ -1,9 +1,8 @@
 from flask import Flask
-from flask_restful import  Api
+from flask_restful import Api
 
 from src.controllers.listHoteisController import ListHoteis
 from src.controllers.HotelController import Hotel
-
 
 
 app = Flask(__name__)

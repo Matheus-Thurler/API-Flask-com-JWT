@@ -1,21 +1,21 @@
 from sql_alchemy import banco
-#from hashlib import sha256
+from flask_bcrypt import Bcrypt
 
+bcrypt = Bcrypt()
 
 class UserModel(banco.Model):
     __tablename__ = 'users'
 
+
     user_id = banco.Column(banco.Integer, primary_key=True)
     login = banco.Column(banco.String(40))
-    #password = sha256(banco.Column(banco.String(40)))
-    password = banco.Column(banco.String(40))
-    
+    password = banco.Column(banco.String(1406))
 
 
     def __init__(self, login, password):
         self.login = login
-        self.password = password
-
+        self.password = bcrypt.generate_password_hash(password.encode('utf-8'))
+ 
     
     def json(self):
         return {

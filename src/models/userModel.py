@@ -1,5 +1,5 @@
 from sql_alchemy import banco
-from hashlib import sha256
+#from hashlib import sha256
 
 
 class UserModel(banco.Model):
@@ -7,7 +7,8 @@ class UserModel(banco.Model):
 
     user_id = banco.Column(banco.Integer, primary_key=True)
     login = banco.Column(banco.String(40))
-    password = sha256(banco.Column(banco.String(40)))
+    #password = sha256(banco.Column(banco.String(40)))
+    password = banco.Column(banco.String(40))
     
 
 
@@ -30,6 +31,14 @@ class UserModel(banco.Model):
             return user
         return None
 
+
+    @classmethod
+    def find_by_login(cls, login):
+        user = cls.query.filter_by(login=login).first()
+        if user:
+            return user
+        return None
+        
 
     def save_user(self):
         banco.session.add(self)

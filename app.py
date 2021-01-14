@@ -7,6 +7,7 @@ from dotenv import load_dotenv
 from sql_alchemy import banco
 from src.controllers.listHoteisController import ListHoteis
 from src.controllers.HotelController import Hotel
+from src.controllers.UserController import User, UserRegister
 
 
 app = Flask(__name__)
@@ -24,6 +25,8 @@ def cria_banco():
 
 api.add_resource(ListHoteis, '/hoteis')
 api.add_resource(Hotel, '/hoteis/<string:hotel_id>')
+api.add_resource(User, '/usuarios/<int:user_id>')
+api.add_resource(UserRegister, '/cadastro')
 
 
 if __name__ == "__main__":

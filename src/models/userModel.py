@@ -19,7 +19,7 @@ class UserModel(banco.Model):
     def json(self):
         return {
             'user_id' : self.user_id,
-            'login' : self.login,
+            'login' : self.login
         }
 
 ####################################################49 user model
@@ -31,18 +31,11 @@ class UserModel(banco.Model):
         return None
 
 
-    def save_hotel(self):
+    def save_user(self):
         banco.session.add(self)
         banco.session.commit()
 
-
-    def update_hotel(self, nome, estrelas, diaria, cidade):
-        self.nome = nome
-        self.estrelas = estrelas
-        self.diaria = diaria
-        self.cidade = cidade
-
     
-    def delete_hotel(self):
+    def delete_user(self):
         banco.session.delete(self)
         banco.session.commit()

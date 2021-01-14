@@ -2,6 +2,7 @@ import os
 from flask import Flask
 from flask_restful import Api
 from dotenv import load_dotenv
+from flask_cors import CORS
 
 
 from sql_alchemy import banco
@@ -12,6 +13,7 @@ from src.controllers.UserController import User, UserRegister
 
 
 app = Flask(__name__)
+CORS(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("DATABASE_URL")
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 

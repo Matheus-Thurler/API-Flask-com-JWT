@@ -14,11 +14,12 @@ segurança do sistema.
 
 O sistema possui CORS .
 
+
 Rotas:
 
 METHODS | URL | INFORMAÇÕES
 --------- | ------ | -------
-GET | /hoteis | qualquer usuario logado ou não poderá fazer consulta de hotéis
+GET | /hotels | qualquer usuario logado ou não poderá fazer consulta de hotéis
 POST | /hotel/{id} | somente usuario logado com verificação token poderá cadastrar hotel com as informações: nome, estrelas, diária e cidade
 PUT | /hotel/{id}| somente usuario logado com verificação token poderá alterar hotel com as informações: nome, estrelas, diária e cidade
 DELETE |/hotel{id} | somente usuario logado com verificação token poderá deletar um hotel

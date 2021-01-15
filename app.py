@@ -16,7 +16,7 @@ from src.config.blacklist import BLACKLIST
 app = Flask(__name__)
 
 
-CORS(app)
+cors = CORS(app, resourses={e"/*"}: {"origins":"*"})
 
 api = Api(app)
 jwt =JWTManager(app)
@@ -41,7 +41,7 @@ def verifica_blacklist(token):
 @jwt.revoked_token_loader
 def token_de_acesso_invalidado():
     return jsonify({'message': 'You have been logged out.'}), 401 #logout nao autorizado
-    
+
 
 api.add_resource(ListHoteis, '/hoteis')
 api.add_resource(Hotel, '/hoteis/<string:hotel_id>')

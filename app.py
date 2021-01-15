@@ -5,9 +5,8 @@ from flask_cors import CORS
 from flask_jwt_extended import JWTManager
 
 
-
-from sql_alchemy import banco
-from src.controllers.HotelController import Hotel, ListHoteis
+from sql_alchemy import database
+from src.controllers.HotelController import Hotel, ListHotels
 from src.controllers.UserController import User, UserRegister, UserLogin, UserLogout
 from src.config.settings import DATABASE_URL, JWT_SECRET_KEY
 from src.config.blacklist import BLACKLIST
@@ -16,7 +15,7 @@ from src.config.blacklist import BLACKLIST
 app = Flask(__name__)
 
 
-cors = CORS(app, resourses={e"/*"}: {"origins":"*"})
+cors = CORS(app, resources={r"/*": {"origins": "*"}})
 
 api = Api(app)
 jwt =JWTManager(app)
@@ -29,8 +28,8 @@ app.config['JWT_EXPIRATION_DELTA'] = datetime.timedelta(days=14)
 
 
 @app.before_first_request
-def cria_banco():
-    banco.create_all()
+def cria_database():
+    database.create_all()
 
 
 @jwt.token_in_blacklist_loader
@@ -43,15 +42,15 @@ def token_de_acesso_invalidado():
     return jsonify({'message': 'You have been logged out.'}), 401 #logout nao autorizado
 
 
-api.add_resource(ListHoteis, '/hoteis')
-api.add_resource(Hotel, '/hoteis/<string:hotel_id>')
-api.add_resource(User, '/usuarios/<int:user_id>')
+api.add_resource(ListHotels, '/hotels')
+api.add_resource(Hotel, '/hotels/<string:hotel_id>')
+api.add_resource(User, '/users/<int:user_id>')
 api.add_resource(UserLogin, '/login')
-api.add_resource(UserRegister, '/cadastro')
+api.add_resource(UserRegister, '/register')
 api.add_resource(UserLogout, '/logout')
 
 
 if __name__ == "__main__":
-    from sql_alchemy import banco
-    banco.init_app(app)
+    from sql_alchemy import database
+    database.init_app(app)
     app.run(debug=True)

@@ -1,14 +1,14 @@
-from sql_alchemy import banco
+from sql_alchemy import database
 
 
-class HotelModel(banco.Model):
+class HotelModel(database.Model):
     __tablename__ = 'hoteis'
 
-    hotel_id = banco.Column(banco.String(80), primary_key=True)
-    nome = banco.Column(banco.String(80))
-    estrelas = banco.Column(banco.Float(precision=1))
-    diaria = banco.Column(banco.Float(precision=2))
-    cidade = banco.Column(banco.String(40))
+    hotel_id = database.Column(database.String(80), primary_key=True)
+    nome = database.Column(database.String(80))
+    estrelas = database.Column(database.Float(precision=1))
+    diaria = database.Column(database.Float(precision=2))
+    cidade = database.Column(database.String(40))
 
 
     def __init__(self, hotel_id, nome, estrelas, diaria, cidade):
@@ -38,8 +38,8 @@ class HotelModel(banco.Model):
 
 
     def save_hotel(self):
-        banco.session.add(self)
-        banco.session.commit()
+        database.session.add(self)
+        database.session.commit()
 
 
     def update_hotel(self, nome, estrelas, diaria, cidade):
@@ -50,5 +50,5 @@ class HotelModel(banco.Model):
 
     
     def delete_hotel(self):
-        banco.session.delete(self)
-        banco.session.commit()
+        database.session.delete(self)
+        database.session.commit()

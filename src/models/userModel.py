@@ -1,15 +1,15 @@
-from sql_alchemy import banco
+from sql_alchemy import database
 from flask_bcrypt import Bcrypt
 
 bcrypt = Bcrypt()
 
-class UserModel(banco.Model):
+class UserModel(database.Model):
     __tablename__ = 'users'
 
 
-    user_id = banco.Column(banco.Integer, primary_key=True)
-    login = banco.Column(banco.String(40))
-    password = banco.Column(banco.String(1406))
+    user_id = database.Column(database.Integer, primary_key=True)
+    login = database.Column(database.String(40))
+    password = database.Column(database.String(1406))
 
 
     def __init__(self, login, password):
@@ -41,10 +41,10 @@ class UserModel(banco.Model):
         
 
     def save_user(self):
-        banco.session.add(self)
-        banco.session.commit()
+        database.session.add(self)
+        database.session.commit()
 
     
     def delete_user(self):
-        banco.session.delete(self)
-        banco.session.commit()
+        database.session.delete(self)
+        database.session.commit()

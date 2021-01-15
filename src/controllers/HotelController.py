@@ -2,7 +2,7 @@ from flask_restful import Resource, reqparse
 from src.models.hotelModel import HotelModel
 from flask_jwt_extended import jwt_required
 
-class ListHoteis(Resource):
+class ListHotels(Resource):
     def get(self):
         return {'hoteis': [hotel.json() for hotel in HotelModel.query.all()]}
 

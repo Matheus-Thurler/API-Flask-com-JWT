@@ -14,6 +14,8 @@ segurança do sistema.
 
 O sistema possui CORS .
 
+Configuração do .env no arquivo .env.example
+
 
 Rotas:
 

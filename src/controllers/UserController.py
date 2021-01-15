@@ -42,9 +42,9 @@ class UserRegister(Resource):
 
         if UserModel.find_by_login(dados['login']):
             return {"message": "The Login '{}' already exists."}
-        #hashed = bcrypt.generate_password_hash(dados['password'])
         user = UserModel(**dados)
         user.save_user()
+
         return {"message": "User created successfully!"}, 201
 
 
@@ -59,4 +59,5 @@ class UserLogin(Resource):
         if user and bcrypt.check_password_hash(user.password, dados['password']):
             token_de_acesso = create_access_token(identity=user.user_id)
             return {'acess_token': token_de_acesso}, 200
+            
         return {'messge':'The username or password is iuncorrect.'}, 401

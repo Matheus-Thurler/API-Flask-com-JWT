@@ -6,11 +6,13 @@ Este documento explica como funciona a API.
 
 Esta API refere-se a criação de usuários e hotéis.
 
-Tokens expiram há cada 14 dias
+Tokens expiram há cada 14 dias.
 
 Todas as senhas são criptografadas ao banco de dados, sendo assim aumentando a 
 
 segurança do sistema.
+
+O sistema possui CORS .
 
 Rotas:
 

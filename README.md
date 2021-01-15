@@ -1,12 +1,12 @@
 # API-Flask-com-JWT-Hash-Password
 
 
-####Explicação
+##Explicação
 #
-#####Este documento explica como funciona a API.
-#####Esta API refere-se a criação de usuários e hotéis.
-#####Tokens expiram há cada 14 dias
-#####Todas as senhas são criptografadas ao banco de dados, sendo assim aumentando a segurança do sistema.
+###Este documento explica como funciona a API.
+###Esta API refere-se a criação de usuários e hotéis.
+###Tokens expiram há cada 14 dias
+###Todas as senhas são criptografadas ao banco de dados, sendo assim aumentando a segurança do sistema.
 
 
 ###Rotas:
@@ -22,6 +22,6 @@ POST | /login | Realização de login com geração do token, parâmetros de log
 POST | /logout | Logout de usuário do sistema com token, parâmetros: login e senha
 
 
-####Ao decorrer do tempo, a API vai sofrer melhorias.
+###Ao decorrer do tempo, a API vai sofrer melhorias.
 
 

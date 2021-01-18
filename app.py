@@ -5,7 +5,7 @@ from flask_cors import CORS
 from flask_jwt_extended import JWTManager
 
 
-from sql_alchemy import database
+from src.data.sql_alchemy import database
 from src.controllers.HotelController import Hotel, ListHotels
 from src.controllers.UserController import User, UserRegister, UserLogin, UserLogout
 from src.config.settings import DATABASE_URL, JWT_SECRET_KEY
@@ -51,6 +51,6 @@ api.add_resource(UserLogout, '/logout')
 
 
 if __name__ == "__main__":
-    from sql_alchemy import database
+    from src.data.sql_alchemy import database
     database.init_app(app)
     app.run(debug=True)

@@ -1,20 +1,20 @@
 # API-Flask-com-JWT-Hash-Password
 
-Explicação
+## Explicação
 #
-Este documento explica como funciona a API.
+# Este documento explica como funciona a API.
 
-Esta API refere-se a criação de usuários e hotéis.
+## Esta API refere-se a criação de usuários e hotéis.
 
-Tokens expiram há cada 14 dias.
+## Tokens expiram há cada 14 dias.
 
-Todas as senhas são criptografadas ao banco de dados, sendo assim aumentando a 
+## Todas as senhas são criptografadas ao banco de dados, sendo assim aumentando a 
 
-segurança do sistema.
+## segurança do sistema.
 
-O sistema possui CORS .
+## O sistema possui CORS .
 
-Configuração do .env no arquivo .env.example
+## Configuração do .env no arquivo .env.example
 
 
 Rotas:

@@ -1,4 +1,4 @@
-from sql_alchemy import database
+from src.data.sql_alchemy import database
 
 
 class HotelModel(database.Model):

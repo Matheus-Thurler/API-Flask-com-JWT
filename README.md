@@ -1,5 +1,4 @@
-# API-Flask-com-JWT-Hash-Password - Branch ATT
-
+# API-Flask-com-JWT-Hash-Password 
 Explicação
 #
 Este documento explica como funciona a API.

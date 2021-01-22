@@ -24,7 +24,7 @@ METHODS | URL | INFORMAÇÕES
 GET | /hotels | qualquer usuario logado ou não poderá fazer consulta de hotéis
 POST | /hotel/{id} | somente usuario logado com verificação token poderá cadastrar hotel com as informações: nome, estrelas, diária e cidade
 PUT | /hotel/{id}| somente usuario logado com verificação token poderá alterar hotel com as informações: nome, estrelas, diária e cidade
-DELETE |/hotel{id} | somente usuario logado com verificação token poderá deletar um hotel
+DELETE |/hotel/{id} | somente usuario logado com verificação token poderá deletar um hotel
 POST | /register | cadastro de usuário com parâmetros login e senha
 POST | /login | Realização de login com geração do token, parâmetros de login : login e senha
 POST | /logout | Logout de usuário do sistema com token, parâmetros: login e senha
